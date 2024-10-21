@@ -1,0 +1,15 @@
+{
+  "hash": "488493b3f28350f0eba30c4b5a813636",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Workspace setup\n---\n\n\n\n\n\nThere are lots of different ways to run R code and many tools to help you write it. You don't require any special tools to create an R script, a simple text editor like Notepad on Windows is sufficient. More advanced tools include IDEs like RStudio or Visual Studio Code.\n\nFor this workshop we will be keeping things as simple as possible in order to allow us to focus on the topics we're learning without having to learn too many extra tools along the way.\n\nFor the purpose of this course we will be using a free tool called RStudio which provides you with an integrated enviroment where you can write and run R code. The easiest way to get access to R and RStudio is first downloading and installing the **latest R version** from [https://cran.rstudio.com/](https://cran.rstudio.com/), and after downloading and installing **RStudio** from [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/). You may need administrator access to install R and RStudio on your computer. Both tools are freely available for Windows, MacOS and Linux.\n\n::: {#keypointsN .callout-tip icon=false title='Installation on University managed computers '}\nIf you are using a University of Bristol computer, you will find R and RStudio in *Company Portal*.\n:::\n\nOnce both are installed, you can open RStudio and will look something like this:\n\n![](../assets/rstudio-ide.png \"RStudio IDE\")\n\n\nThe way that we will be setting up the space is to have a text editor on the top-left side of the screen and the R console on the bottom-left side. We'll use the editor to write our code and the console to run it. On the right side we can keep other tabs open.\n\n\n### Working directory\n\nSetting up a working directory helps organize your project files and ensures that your code can find any necessary resources and dependencies. We will revisit this concept later on, but for now be mindful that the space where you save your scripts has to be the same than the working directory where R console and/or your Command Prompt/Terminal are working,\n\nIn R Console you can print the current working directory it with\n```{.r}\ngetwd()\n```\n\n\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"/Users/ab12345\"\n```\n\n\n:::\n:::\n\n\n\n\n\nAlternatively, if you are using the Command Prompt (Windows) you can check your current directory with\n```{.bash filename=\"Command Prompt\"}\ncd\n```\n\nOr if you are using a Terminal (MacOS and Linux) you can check your current directory with\n```{.bash filename=\"Terminal\"}\npwd\n```\n\nWe're now ready to get started!\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
