@@ -1,5 +1,5 @@
 ---
-title: Using modules
+title: Reading data
 ---
 
 We have seen how to use several built-in functions in R such as `print` and `input`. If we think that these functions have been written by somebody else and we don't need to worry about their implementation, it is easy to imagine how functions simplify our programming making our code smaller, more readable and with less errors.

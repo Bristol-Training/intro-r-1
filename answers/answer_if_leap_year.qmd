@@ -12,7 +12,7 @@ year <- 2024
 
 if (year %% 4 == 0) {
     cat(year, "is a leap year")
-}
+} 
 ```
 
 For a year that we know is not a leap year, what do we get:
