@@ -1,0 +1,15 @@
+{
+  "hash": "1fc27c85ef873bfc0a38e7bfa2b479f4",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Reading data\n---\n\n\n\n\n\nSo far, all the code we've run is somewhat static. Variables get assinged a value in the script and very time we run it, the output is always be the same. We will see a lot more of this throughout this workshop, but for now we will introduce one more function that R provides, `read.csv`.\n\nThe `print` and `cat` functions are one way of how we get information *out* of our program, and the `read.csv` function is a way of getting data *into* it. The function will open and read a *Comma-Separated Values* (csv) file, parse it, and assign the data to a variable on the left hand side of the `<-`.\n\nWe will load a dataset of a study about [gene expression data of 42 ER- and ER+ breast cancer patients](\"https://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS3nnn/GDS3716/soft/GDS3716.soft.gz\")\n\n\n\n\n\n::: {.cell filename='read_csv.r'}\n\n```{.r .cell-code}\nbreast <- read.csv(\"https://raw.githubusercontent.com/Bristol-Training/beginning-r/refs/heads/main/data/GDS3716.soft\",\n            sep=\"\\t\",\n            skip=99)\n\nprint(breast[1:10,1:5])\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n      ID_REF IDENTIFIER GSM512539 GSM512540 GSM512541\n1  1007_s_at    MIR4640    2461.4    3435.7    1932.5\n2    1053_at       RFC2      26.7     159.0      31.2\n3     117_at      HSPA6      82.6     243.4     150.2\n4     121_at       PAX8     942.3     897.5     840.8\n5  1255_g_at     GUCA1A      71.8      87.9      75.4\n6    1294_at    MIR5193     630.2     571.4     346.3\n7    1316_at       THRA     186.0     208.7     141.0\n8    1320_at     PTPN21      15.8      18.0      10.6\n9  1405_i_at       CCL5      71.3      26.1      26.3\n10   1431_at     CYP2E1      58.7      45.0      98.3\n```\n\n\n:::\n:::\n\n\n\n\n\n::: {#exercise .callout-note title=\"Exercise\" icon=false} \n\nUsing the breast cancer dataser, modify `read_csv.R` to print the average expresion of the gene TP53.\n\n:::\n\n::: {#answer .callout-caution icon=false title='Answer' collapse=\"true\"}\n```{.r}\n#| filename: read_csv.r\n\nbreast <- read.csv(\"https://raw.githubusercontent.com/Bristol-Training/beginning-r/refs/heads/main/data/GDS3716.soft\",\n            sep=\"\\t\",\n            skip=100)\n```\n:::\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

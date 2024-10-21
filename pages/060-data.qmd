@@ -7,65 +7,33 @@ So far, all the code we've run is somewhat static. Variables get assinged a valu
 
 The `print` and `cat` functions are one way of how we get information *out* of our program, and the `read.csv` function is a way of getting data *into* it. The function will open and read a *Comma-Separated Values* (csv) file, parse it, and assign the data to a variable on the left hand side of the `<-`.
 
+We will load a dataset of a study about [gene expression data of 42 ER- and ER+ breast cancer patients]("https://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS3nnn/GDS3716/soft/GDS3716.soft.gz")
 
-```{.r}
+
+```{r}
 #| filename: read_csv.r
 
-read.csv('')
-with open('../assets/sample.csv', 'r') as file:
-    # create a csv.reader object
-    csv_reader <- csv.reader(file)
-    for row in csv_reader:
-        cat(row[2])
+breast <- read.csv("https://raw.githubusercontent.com/Bristol-Training/beginning-r/refs/heads/main/data/GDS3716.soft",
+            sep="\t",
+            skip=99)
+
+print(breast[1:10,1:5])
 ```
-
-
-In this example we used the function `open()` to open a file in read mode (this is a R built-in function), and created a `csv.reader` object to iterate through the rows of the file. Note that there is also a new statement [with](https://docs.R.org/3/reference/compound_stmts.html#with), what we will not cover in this session.
-
-
-
-"https://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS3nnn/GDS3716/soft/GDS3716.soft.gz"
-
-::: {#keypoints .callout-tip icon=false title='What is your current working directory?'}
-
-When you read or write files without specifying a full path, the operating system assumes you're referring to files in the working directory. It is therefore very important knowing that we are in the same directory that the data file we want to read. We can use the module `os` to do so:
-
-```{.R}
-import os
-
-current_directory <- os.getcwd()
-cat("CWD:", current_directory)
-```
-```{.r}
-#| echo: false
-cat("CWD: /Users/USER/Training/Beginning R/beginning-R/pages")
-```
-
-:::
 
 
 ::: {#exercise .callout-note title="Exercise" icon=false} 
 
-Using the CSV file [sample.csv](../assets/sample.csv), modify `read_csv.R` to print only the average of the numbers in the first column.
+Using the breast cancer dataser, modify `read_csv.R` to print the average expresion of the gene TP53.
 
 :::
 
 ::: {#answer .callout-caution icon=false title='Answer' collapse="true"}
 ```{.r}
 #| filename: read_csv.r
-import csv
 
-sum <- 0.0
-count <- 0
-
-with open('../assets/sample.csv', 'r') as file:
-    # create a csv.reader object
-    csv_reader <- csv.reader(file)
-    for row in csv_reader:
-        sum <- sum + float(row[0])
-        count <- count + 1        
-
-cat("Average:", sum/count)
+breast <- read.csv("https://raw.githubusercontent.com/Bristol-Training/beginning-r/refs/heads/main/data/GDS3716.soft",
+            sep="\t",
+            skip=100)
 ```
 :::
 
