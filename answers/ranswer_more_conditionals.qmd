@@ -1,0 +1,41 @@
+
+**Less than:**
+
+```{r}
+my_number <- 74
+
+if (my_number < 100) {
+    cat(my_number, "is less than 100")
+}
+```
+
+<br/>
+
+**Equal to:**
+
+
+```{r}
+my_number <- 74
+
+if (my_number == 100) {
+    cat(my_number, "== 100") }
+if (my_number == 74) {
+    cat(my_number, "== 74") }
+```
+
+<br/>
+
+**Not equal to:**
+
+```{r}
+my_number <- 74
+
+if (my_number != 100) {
+    cat(my_number, "!= 100")
+}
+
+if (my_number != 74) {
+    cat(my_number, "!= 74")
+}
+```
+

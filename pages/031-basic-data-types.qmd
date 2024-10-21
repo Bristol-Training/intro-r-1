@@ -1,0 +1,108 @@
+---
+title: Basic data types
+---
+
+In R we have several built-in basic data types. The most common types of data that you will find are numbers, characters and booleans.
+
+::: {#keypoints2 .callout-tip icon=false title='Key points'}
+- R is dynamically typed, meaning you don't need to declare the type of a variable explicitly.
+- You can use the `class()` function to check the data type of a variable.
+- Data types determine what operations can be performed on the data.
+- You can convert between different data types using built-in functions like `as.integer()`, `as.numeric()` and `as.character()`
+:::
+
+### Numeric Types
+
+Description                | Type     | Example 
+---------------------------|----------|----------------
+integers or whole numbers  | integer  | `a <- as.integer(12)`
+floating-point numbers     | numeric  | `b <- as.numeric(7.3)`
+complex numbers            | complex  | `c <- as.complex(2i + 7)`
+
+
+```{.r}
+a <- 12L
+b <- 7.3
+c <- 2i + 7
+
+cat("A:", a, class(a))
+cat("B:", b, class(b))
+cat("C:", c, class(c))
+```
+
+```{r}
+#| echo: false
+a <- 12L
+b <- 7.3
+c <- 2i + 7
+
+cat("A:", a, class(a))
+cat("B:", b, class(b))
+cat("C:", c, class(c))
+```
+
+
+### Text Types
+
+Description                       | Type       | Example 
+----------------------------------|------------|----------------
+textual data (strings)            | character  | `a <- "Jean Golding"`
+
+```{r}
+name <- "Jean Golding"
+cat("Name:", name, class(name))
+```
+
+::: {#keypoint1 .callout-tip icon=false title="Note that"}
+It’s important that when writing numbers in your scripts, you do not put quotation marks around them, otherwise they will be recognized by the R interpreter as strings. There is a difference between 3.14159 and "3.14159", the first is a number and the second is just a string of characters.
+
+```{r}
+pi <- 3.14159
+cat("pi:", pi, class(pi))
+```
+```{r}
+pi <- "3.14159"
+cat("pi:", pi, class(pi))
+```
+:::
+
+
+### Boolean Types
+
+Description                       | Type     | Example 
+----------------------------------|----------|----------------
+boolean values (True or False)    | boolean  | `a <- TRUE`
+
+```{r}
+a <- 23
+b <- 2
+c <- a != b
+
+cat("C:", c, class(c))
+```
+
+
+
+::: {#exercise-1 .callout-note title="Exercise" icon=false} 
+
+Without using R, can you tell what is the data type of these variables?
+```{.r}
+x <- 32
+number_of_participants <- "1017"
+Friday <- TRUE
+y <- 1L
+a <- 10<8
+```
+:::
+
+::: {#answer .callout-caution icon=false title='Answer' collapse="true"}
+`x` is a numeric (float)
+
+`number_of_participants` is a string
+
+`Friday` is a boolean
+
+`y` is an integer 
+
+`a` is a boolean
+:::

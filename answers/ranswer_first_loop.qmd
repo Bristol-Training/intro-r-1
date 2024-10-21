@@ -1,0 +1,35 @@
+Adding more items to the list makes the loop go around more times
+
+```{r}
+my_words <- c("Hello", "R", "Goodbye", "R")
+
+for (word in my_words) {
+    cat(word, " ")
+}
+```
+
+
+A vector cannot have a mixture of data types, so all elements are converted to strings.
+
+```{r}
+#| error: true
+
+my_words <- c("Hello", "R", as.numeric(404), "Goodbye", "R", 42)
+
+for (word in my_words) {
+    cat(word, "-", class(word), "\n")
+}
+```
+
+
+Looping over an empty list does not print anything
+
+```{r}
+my_words <- vector()
+
+for (word in my_words) {
+    cat(word, " ")
+}
+```
+
+

@@ -1,0 +1,134 @@
+---
+title: Operators
+---
+
+Operators are essential for performing various operations on variables and values. You may want to multiply two numbers or compare them to know which one is greater, and operators allow us to do it.
+
+### Arithmetic Operators
+
+Arithmetic operators can be used with numerical variables such as `int` and `float`.
+
+Description                 | Operator | Example 
+----------------------------|----------|----------------
+Addition                    | +        | a + b
+Subtraction                 | -        | a - b
+Multiplication              | *        | a * b
+Division                    | /        | a / b
+Floor Division              | %/%      | a %/% b
+Modulo                      | %%       | a %% b
+Exponentiation              | ^        | a ^ b
+
+```{.r}
+a <- 9
+b <- 2
+
+cat('Subtraction:', a - b)
+cat('Division:', a / b)
+cat('Floor Division:', a %/% b)
+cat('Modulo:', a %% b)
+cat('Power:', a ^ b)
+```
+
+```{r}
+#| echo: false
+
+a <- 9
+b <- 2
+
+cat('Subtraction:', a - b)
+cat('Division:', a / b)
+cat('Floor Division:', a %/% b)
+cat('Modulo:', a %% b)
+cat('Power:', a ^ b)
+```
+
+
+### Comparison Operators
+
+We can compare two variables (or a variable and a value) using comparison operators. They are applicable to numerical variables, strings and booleans.
+
+Description                 | Operator | Example 
+----------------------------|----------|----------------
+Equal To                    | ==       | a == b
+Not Equal To                | !=       | a != b
+Greater Than                | >        | a > b
+Less Than                   | <        | a < b
+Greater Than or Equal To    | >=       | a >= b
+Less Than or Equal To       | <=       | a <= b
+
+```{.r}
+a <- 5
+b <- 2
+
+cat("Equal To:", a == b)
+cat("Less Than:", a > b)
+cat("Not Equal To:", a != b)
+cat("Greater Than:", a < b)
+```
+
+```{r}
+#| echo: false
+
+a <- 5
+b <- 2
+
+cat("Equal To:", a == b)
+cat("Less Than:", a > b)
+cat("Not Equal To:", a != b)
+cat("Greater Than:", a < b)
+```
+
+
+### Logical Operators
+
+Logical operators are used to combine conditional statements or negate them, and can only be applied to booleans.
+
+Description                 | Operator | Example 
+----------------------------|----------|----------------
+Logical AND (element-wise)  | &        | (a == b) & (a > c)
+Logical AND                 | &&       | (a == b) && (a > c)
+Logical OR (element-wise)   | \|        | (a > b) \| (a < c)
+Logical OR                  | \|\|       | (a > b) \|\| (a < c)
+Logical NOT                 | !        | !(a > b)
+
+```{.r}
+a <- 5
+b <- 2
+c <- 4
+
+cat("(a==b) AND (a>c)", (a==b) & (a>c))
+cat("(a>b) OR (a<c)", (a>b) | (a<c))
+cat("NOT (a>b):", !(a>b))
+```
+```{r}
+#| echo: false
+
+a <- 5
+b <- 2
+c <- 4
+
+cat("(a==b) AND (a>c):", (a==b) & (a>c))
+cat("(a>b) OR (a<c):", (a>b) | (a<c))
+cat("NOT (a>b):", !(a>b))
+```
+
+::: {#exercise .callout-note title="Exercise" icon=false} 
+
+Define two strings `str1 <- "Tuesday"` and `str2 <- "Wednesday"`, and compare them (e.g. equal, greater and less than).
+
+:::
+
+::: {#answer .callout-caution icon=false title='Answer' collapse="true"}
+```{r}
+str1 <- "Tuesday"
+str2 <- "Wednesday"
+
+cat(str1,"equal to",str2,":",str1==str2)
+cat(str1,"greater than",str2,":",str1>str2)
+cat(str1,"less than",str2,":",str1<str2)
+```
+
+It is easy undersand that the operator `==` returns `TRUE` if two strings are the same. But what do `>` and `<`? 
+
+R doesn't understand the meaning of works "Tuesday" and "Wednesday", they are just two chains of characters. The operator `>` will return `TRUE` if the string `str1` comes after alphabetically than `str2`, and `<` will return `TRUE` if the string `str1` comes before alphabetically than `str2`. These operations are case-sensitive.
+:::

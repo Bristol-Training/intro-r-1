@@ -1,0 +1,161 @@
+---
+title: For loops
+---
+
+It is possible to make R repeat certain lines of code using *loops*. The ability to run a line of code multiple times is the first large step on your road to making your code more *structured* and *reusable*.
+
+Imagine we have three strings in a vector that we want to print. We could start by calling `cat` three times to create a program like:
+
+```{.r filename="loop.R"}
+my_words <- c("Jean", "Golding", "Institute")
+cat(my_words[1])
+cat(my_words[2])
+cat(my_words[3])
+```
+```{r}
+#| echo: false
+my_words <- c("Jean", "Golding", "Institute")
+cat(my_words[1])
+cat(my_words[2])
+cat(my_words[3])
+```
+
+This printed the output we want. But you may feel that repeating the same call to `cat` is *wasteful* code, particularly if we want to repeat the same operation for many elements. If we can manage to write that line only once then we could save ourselves some typing and potentially make the code easier to read!
+
+```
+FOR EACH word IN my_words
+    DO SOMETHING WITH word    
+```
+
+We can write a `for` loop in R which will perform a task once for each word in our vector:
+
+```{r filename="loop.R"}
+my_words <- c("Jean", "Golding", "Institute")
+
+for (word in my_words) {
+    cat(word, " ")
+}
+```
+
+Even in this tiny example, we have ve taken a script that was four lines of code and have reduced it to three lines, and more interestingly the same loop will work no matter how many items there are in the vector `my_words`.
+
+This maps to real life where you may want, for example, to pay for each item on your shopping list. Another way of saying that could be "for each item on my shopping list, add its price to my total", or as you would write that in R:
+
+```{.R}
+total <- 0
+for (item in shopping_list) {
+    total <- total + item
+}
+```
+
+::: {#exercise1 .callout-note title="Exercise" icon=false} 
+Edit `loop.R` to have a different number of words in the vector.
+
+- Does it work if you put numbers (i.e. integers or floats) in there as well?
+- What happens if the vector `my_words` is empty? (**hint**: empty vectors look like `vec <- vector()`)
+:::
+
+::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
+{{< include ../answers/ranswer_first_loop.qmd >}}
+:::
+
+
+::: {#keypoints .callout-tip icon=false title='`for` statement syntax'}
+
+A `for` statement has an scaffolding, the parts of the line which must always be the same and tell R that you're trying to make a loop, composed by the word `for`, the parentheses (`()`), the word `in` and the curly braces (`{}`) at the end of the line. These must always be there and in that order:
+<pre>
+<b style="color:darkred">for  (</b> word <b style="color:darkred">in</b> my_words<b style="color:darkred"> )  {</b>
+    cat(word)
+<b style="color:darkred">} </b>
+</pre>
+
+Once the scaffolding is in place, you can place between it the things that *you* care about. The first thing to think about is the variable that you want to loop over. In our case we want to loop over the vector `my_words` because we want to print every item in that vector:
+<pre>
+for  ( word in <b style="color:darkred">my_words</b> )  {
+    cat(word)
+}
+</pre>
+
+Now we need to decide what name we want to give temporarily to each item as we get to it. As with any variable naming, it is important that we choose a good name which describe a single object from the vector. For example, if we're looping over all students in a class then we could call the variable `student` or if we're looping over a vector of ages then we could call the variable `age`. Here, since we're looping over a vector of generic *words*, we name our variable `word`:
+<pre>
+for  ( <b style="color:darkred">word</b> in my_words ) {
+    cat(word)
+}
+</pre>
+
+Finally, if we want the loop to actually *do* something then we need to give the loop a *body*. The body is the lines of code that are going to be repeated. They can be any R code but it is only within the body of the loop that we can refer to the loop variable `word`. As with `if`, it is recommended to use indentation to make it easier to identify what is in the body of the loop and what is not.
+<pre>
+for  ( word in my_words ) {
+<b style="color:darkred">    cat(word)</b>
+}
+</pre>
+
+:::
+
+
+If we want to write more code after the end of a loop, we have to make sure that we have *closed* the curly braces. So this code will print:
+
+```{r}
+my_words <- c("Hello", "R")
+
+for (word in my_words) {
+    cat(word, " ")
+}
+cat("Goodbye ")
+```
+
+
+On the contrary, the below code will print `Goodbye` in each iteration. This is because it was inside the body of the loop.
+```{r}
+my_words <- c("Hello", "R")
+
+for (word in my_words) {
+    cat(word, " ")
+cat("Goodbye ")
+}
+```
+
+
+## Loop over a range of numbers
+
+There's a built in operator in R `:` which provides you with numbers (integers) in a range. When given two numbers, e.g. `1:10`, it will give you integers, starting from the first one and going up (*or down*) to the number you gave in second place. We can use this directly into our loop as the object to loop over and it will print:
+
+```{r}
+for (number in 1:10) {
+    cat(number, " ")
+}
+```
+
+We can also loop over a range of numbers in descending order.
+
+```{r}
+for (number in 5:-5) {
+    cat(number, " ")
+}
+
+```
+
+::: {#exercise .callout-note title="Exercise" icon=false} 
+Given the matrix below, write a loop that prints for columns 1 and 3, rows 1 to 4..
+```{r}
+my_matrix <- t(matrix(1:25, nrow = 5, ncol = 5))
+
+print(my_matrix)
+```
+:::
+
+::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
+
+```{r}
+my_matrix <- t(matrix(1:25, nrow = 5, ncol = 5))
+
+for (i in 1:4) {
+    for (j in c(1,3)) {
+        cat(my_matrix[i,j], " ")
+    }
+    cat("\n")
+}
+```
+
+:::
+

@@ -1,0 +1,19 @@
+Starting with a vector of string, each item gets printed once.
+
+```{r}
+my_words <- c("Hello", "R", "!")
+
+for (word in my_words) {
+    cat(word, " ")
+}
+```
+
+
+We can also loop over a range of numbers.
+
+```{r}
+for (number in 5:-5) {
+    cat(number, " ")
+}
+
+```

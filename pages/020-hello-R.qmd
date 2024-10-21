@@ -1,0 +1,97 @@
+---
+title: Hello, R!
+---
+
+R is a scripting language, meaning that commands are interpreted at runtime rather than translated into machine code (compiled) beforehand. The simplest way to run a command in R is making use of the R command line. Follow these steps:
+
+- Open a Command Prompt (Windows) or Terminal (MacOS or Linux) on your computer. Alternatively, you can try this on the tab *Terminal* in RStudio.
+- Type `R` and press *Enter* to start the R interpreter. You should see the R prompt (`>`).
+
+```{.bash filename="Terminal/Command Prompt"} 
+R
+```
+```{r filename="Terminal/Command Prompt"}
+#| echo: false
+cat("R version 4.4.0 (2024-04-24) -- \"Puppy Cup\"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> ") 
+```
+
+- At the prompt, type a simple R command like `print("Hello, R!")` or `cat("Hello, R!")`. Press *Enter* to execute the command. You should see "Hello, R!" printed on the screen.
+```{.r}
+cat("Hello, R!")
+```
+
+**You can do the same directly on the tab *Console* in RStudio**. In fact, RStudio just did the step of opening R for us.
+
+To exit the R interpreter, type `q()`. Note, that if you do this in RStudio you will close the program.
+
+
+
+## Scripts
+
+
+A R script is a simple text file containing a set of instructions. Scripts allow us to save instructions to automate repetitive tasks, streamline processes, and perform specific functions without manual intervention. This is called batch processing. R will read your script, starting at the top and running each line of code until it reaches the bottom.
+
+You can write script files using any text editor. Here we are going to use **RStudio**, so let's start by going to the text editor panel in RStudio and type into it:
+
+```{.r}
+cat("Hello, R!")
+```
+
+Then go to *File → Save* and give it a more descriptive name. R files end in the extension ".R" so change its name to "script.R". In the far right panel you will see a list of files, and you should be able to see `script.R`.
+
+To run the script that we've just written and saved, we move to the editor and click the *Run* button on the top right side. This will execute the command in the current line or selected lines. You can also write or paste commands directly on the R Console tab, try it as well.
+
+::: {#keypoints-N .callout-tip icon=false title='Note that'}
+- Always give your R scripts a ".R" extension
+- In RStudio, R *code* goes in the text editor window while you *run* the code on the console or the terminal tabs.
+:::
+
+Alternative, we can use the Terminal to run a script. The only command we need to know about here is `RScript` which we run by typing `Rscript` in that window, followed by a space, followed by the name of our script file (including the ".R" extension) and then pressing *Enter*:
+
+```{.bash filename="Terminal/Command Prompt"} 
+RScript script.R
+```
+
+If you do that you should see, printed to the terminal:
+
+```{r}
+#| filename: "script.R" 
+cat("Hello, R!")
+```
+
+Congratulations, you've just written and executed your very first R script!
+
+
+## Commenting your script
+
+It is **good practice** to add comments to your code so it is easy to understand by other programmers or even yourself after a few months. This is particularly important if there's anything non-obvious in your code. To add a comments you can use a `#` symbol at any position in your script, what is behind '#' will be ignored by R when running that line of code. 
+
+```{r filename="colour.r"}
+# This script asks for your favourite colour
+fav <- "blue"
+
+# cat("Don't print me!") 
+
+cat("My favourite colour is", fav) # print my favourite colour
+```
+
+
+
+
+
