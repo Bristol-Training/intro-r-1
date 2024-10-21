@@ -2,34 +2,16 @@
 title: Reading data
 ---
 
-We have seen how to use several built-in functions in R such as `print` and `input`. If we think that these functions have been written by somebody else and we don't need to worry about their implementation, it is easy to imagine how functions simplify our programming making our code smaller, more readable and with less errors.
 
-However, R's built-in functionality can be greatly extended through the use of **modules**. R modules can be thought of as code libraries, they are files containing code that define functions, classes, and variables and provide additional functionalities.
-Many modules come pre-installed with R, such as `os`, `random` and `datetime`, but other third-party modules can be installed using package managers like `pip`.
-In the next session we will explore how you can create modules yourself to organize and reuse your code.
+So far, all the code we've run is somewhat static. Variables get assinged a value in the script and very time we run it, the output is always be the same. We will see a lot more of this throughout this workshop, but for now we will introduce one more function that R provides, `read.csv`.
 
-To use a module in your R script, you need to import it with `import`. For example:
-```{.r}
-import math
-cat(math.pi)
-```
+The `print` and `cat` functions are one way of how we get information *out* of our program, and the `read.csv` function is a way of getting data *into* it. The function will open and read a *Comma-Separated Values* (csv) file, parse it, and assign the data to a variable on the left hand side of the `<-`.
 
-Note above that to call objects and functions that are defined in a module we will use the module name (`math`), followed by a dot (`.`), and then the object or function name(`pi`).
-
-Below you will learn how to use a module to read data files in CSV format.
-
-
-
-### CSV module : reading CSV files
-
-We have previously explored how to obtain user input via the terminal, but for data analysis you will mostly need extracting data from files. R offers various libraries to facilitate this process, each tailored to specific file formats. We can use the `csv` module to read data from *Comma-Separated Values* (CSV) files.
-
-The `csv` module is a library designed specifically for working with CSV files. It provides functionality to both *read from* and *write to* CSV files efficiently. The script below shows it's basic syntax:
 
 ```{.r}
 #| filename: read_csv.r
-import csv
 
+read.csv('')
 with open('../assets/sample.csv', 'r') as file:
     # create a csv.reader object
     csv_reader <- csv.reader(file)
@@ -42,6 +24,7 @@ In this example we used the function `open()` to open a file in read mode (this 
 
 
 
+"https://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS3nnn/GDS3716/soft/GDS3716.soft.gz"
 
 ::: {#keypoints .callout-tip icon=false title='What is your current working directory?'}
 
