@@ -136,7 +136,7 @@ for (number in 5:-5) {
 ```
 
 ::: {#exercise .callout-note title="Exercise" icon=false} 
-Given the matrix below, write a loop that prints for columns 1 and 3, rows 1 to 4..
+Given the matrix below, write a loop that prints only the elements in columns 1 and 3, *and* rows 1 to 4..
 ```{r}
 my_matrix <- t(matrix(1:25, nrow = 5, ncol = 5))
 

@@ -221,8 +221,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/060-modules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Using modules</span></a>
+  <a href="../pages/060-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reading data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -413,13 +413,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Equal To: FALSE</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Less Than: TRUE</code></pre>
+<pre><code>Greater Than: TRUE</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Not Equal To: TRUE</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Greater Than: FALSE</code></pre>
+<pre><code>Less Than: FALSE</code></pre>
 </div>
 </div>
 </section>
@@ -624,7 +624,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/Bristol-Training\.github\.io\/beginning-r\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

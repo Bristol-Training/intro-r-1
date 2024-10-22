@@ -73,9 +73,9 @@ a <- 5
 b <- 2
 
 cat("Equal To:", a == b)
-cat("Less Than:", a > b)
+cat("Greater Than:", a > b)
 cat("Not Equal To:", a != b)
-cat("Greater Than:", a < b)
+cat("Less Than:", a < b)
 ```
 
 

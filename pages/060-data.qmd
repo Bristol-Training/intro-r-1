@@ -34,6 +34,15 @@ Using the breast cancer dataser, modify `read_csv.R` to print the average expres
 breast <- read.csv("https://raw.githubusercontent.com/Bristol-Training/beginning-r/refs/heads/main/data/GDS3716.soft",
             sep="\t",
             skip=100)
+
+which(breast$IDENTIFIER == "TP53") #returns  1274 10723
+
+v1 <- breast[1274,-c(1,2)]
+mean(as.numeric(v1)) # 310.8952
+
+v2 <- breast[10723,-c(1,2)]
+mean(as.numeric(v2)) # 17.15714
+
 ```
 :::
 

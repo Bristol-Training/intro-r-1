@@ -221,8 +221,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/060-modules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Using modules</span></a>
+  <a href="../pages/060-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reading data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -482,7 +482,7 @@ Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Given the matrix below, write a loop that prints for columns 1 and 3, rows 1 to 4..</p>
+<p>Given the matrix below, write a loop that prints only the elements in columns 1 and 3, <em>and</em> rows 1 to 4..</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>, <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">5</span>))</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -626,7 +626,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/Bristol-Training\.github\.io\/beginning-r\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
