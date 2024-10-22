@@ -7,7 +7,7 @@ So far, all the code we've run is somewhat static. Variables get assinged a valu
 
 The `print` and `cat` functions are one way of how we get information *out* of our program, and the `read.csv` function is a way of getting data *into* it. The function will open and read a *Comma-Separated Values* (csv) file, parse it, and assign the data to a variable on the left hand side of the `<-`.
 
-We will load a dataset of a study about [gene expression data of 42 ER- and ER+ breast cancer patients]("https://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS3nnn/GDS3716/soft/GDS3716.soft.gz")
+We will load a dataset of a study about [gene expression data of 42 ER- and ER+ breast cancer patients](https://ftp.ncbi.nlm.nih.gov/geo/datasets/GDS3nnn/GDS3716/soft/GDS3716.soft.gz)
 
 
 ```{r}

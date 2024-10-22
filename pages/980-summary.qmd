@@ -4,10 +4,9 @@ title: Summary
 Well done for getting this far! We've covered a lot in this course:
 
 - How to set up a R workspace with RStudio
-- Using the `cat()` function
+- Using the `cat()` and `print()` functions
 - Basic data types (integers, floats, strings, boolean)
 - Introduction to data structures
-- Working with lists
 - Conditional branching using `if` statements
 - Looping with `for` and `while`
 - Reading `csv` files

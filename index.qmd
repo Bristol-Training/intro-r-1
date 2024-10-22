@@ -15,6 +15,7 @@ By the end of this course, you will:
 - Understand what a programming language is.
 - Know how to execute instructions, or commands, in R.
 - Have the skills to create a simple R script.
+- Be familiar with RStudio.
 - Feel more confident to embark on your programming journey!
 
 
@@ -43,8 +44,6 @@ We may ask you to run a script using the `Command Prompt` (Windows) or `Terminal
 ```{.bash filename="Terminal/Command Prompt"}
 Rscript script.R
 ```
-
-**Please note that sometimes we will skip showing the execution of scripts on the Terminal/Command Prompt box, but we will assume you to run the script on your.**
 
 In some cases we will introduce general programming concepts and structures using pseudocode, a high-level, easy-to-read syntax close to natural language. This should not be confused with R code and cannot be executed on your machine, but it is useful to describe how your code should behave. Here there is an example:
 ```
