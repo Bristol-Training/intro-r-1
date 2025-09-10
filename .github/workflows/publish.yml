@@ -26,6 +26,10 @@ jobs:
       - name: 🔄 Restore R environment with renv
         run: |
           Rscript -e 'renv::restore()'
+          
+      - name: 🔍 Check Quarto from R
+        run: |
+          Rscript -e 'quarto::quarto_path()'
 
       - name: 🏗️ Render Quarto site
         run: |
