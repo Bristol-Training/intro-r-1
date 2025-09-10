@@ -1,42 +1,44 @@
-
-name: Publish Quarto Site
+name: Render and Publish Quarto site
 
 on:
   push:
-    branches: [main]  # or your default branch
+    branches: [main]   # adjust to your publishing branch
 
 jobs:
-  render-and-publish:
+  build-deploy:
     runs-on: ubuntu-latest
 
-    env:
-      RENV_CONFIG_SANDBOX_ENABLED: FALSE  # Needed for GitHub Actions
-
     steps:
-      - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: 🧰 Set up R
+      - name: Set up R
         uses: r-lib/actions/setup-r@v2
 
-      - name: 📦 Install renv
-        run: |
-          Rscript -e 'install.packages("renv")'
+      - name: Set up Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
 
-      - name: 🔄 Restore R environment with renv
-        run: |
-          Rscript -e 'renv::restore()'
-          
-      - name: 🔍 Check Quarto from R
-        run: |
-          Rscript -e 'quarto::quarto_path()'
-
-      - name: 🏗️ Render Quarto site
-        run: |
-          Rscript -e "quarto::quarto_render(as_job=FALSE)"
-          
-      - name: 🚀 Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Restore R package cache
+        uses: actions/cache@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _site  # or your output directory
+          path: ~/.local/share/renv
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: ${{ runner.os }}-renv-
+
+      - name: Install renv
+        run: Rscript -e 'install.packages("renv")'
+
+      - name: Restore packages with renv
+        run: Rscript -e 'renv::restore()'
+
+      - name: Install Quarto CLI
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render site
+        run: quarto render
+
+      - name: Deploy to pages branch
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                    publish_dir: ./_site
+                    publish_branch: pages
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
