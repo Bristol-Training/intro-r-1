@@ -37,8 +37,8 @@ jobs:
         run: quarto render
 
       - name: Deploy to pages branch
-              uses: peaceiris/actions-gh-pages@v4
-              with:
-                    publish_dir: ./_site
-                    publish_branch: pages
-                    github_token: ${{ secrets.GITHUB_TOKEN }}
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+              publish_dir: ./_site
+              publish_branch: pages
+              github_token: ${{ secrets.GITHUB_TOKEN }}
