@@ -1,1 +1,0 @@
-Sitemap: https://Bristol-Training.github.io/beginning-r/sitemap.xml
