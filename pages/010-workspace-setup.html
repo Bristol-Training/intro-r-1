@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -250,14 +215,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#working-directory" id="toc-working-directory" class="nav-link active" data-scroll-target="#working-directory">Working directory</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/uob-training/beginning-R/edit/main/pages/010-workspace-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/uob-training/beginning-R/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -281,53 +240,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>There are lots of different ways to run R code and many tools to help you write it. You don’t require any special tools to create an R script, a simple text editor like Notepad on Windows is sufficient. More advanced tools include IDEs like RStudio or Visual Studio Code.</p>
-<p>For this workshop we will be keeping things as simple as possible in order to allow us to focus on the topics we’re learning without having to learn too many extra tools along the way.</p>
-<p>For the purpose of this course we will be using a free tool called RStudio which provides you with an integrated enviroment where you can write and run R code. The easiest way to get access to R and RStudio is first downloading and installing the <strong>latest R version</strong> from <a href="https://cran.rstudio.com/">https://cran.rstudio.com/</a>, and after downloading and installing <strong>RStudio</strong> from <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a>. You may need administrator access to install R and RStudio on your computer. Both tools are freely available for Windows, MacOS and Linux.</p>
-<div id="keypointsN" class="callout callout-style-default callout-tip no-icon callout-titled" title="Installation on University managed computers ">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Installation on University managed computers
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you are using a University of Bristol computer, you will find R and RStudio in <em>Company Portal</em>.</p>
-</div>
-</div>
-<p>Once both are installed, you can open RStudio and will look something like this:</p>
-<p><img src="../assets/rstudio-ide.png" title="RStudio IDE" class="img-fluid"></p>
-<p>The way that we will be setting up the space is to have a text editor on the top-left side of the screen and the R console on the bottom-left side. We’ll use the editor to write our code and the console to run it. On the right side we can keep other tabs open.</p>
-<section id="working-directory" class="level3">
-<h3 class="anchored" data-anchor-id="working-directory">Working directory</h3>
-<p>Setting up a working directory helps organize your project files and ensures that your code can find any necessary resources and dependencies. We will revisit this concept later on, but for now be mindful that the space where you save your scripts has to be the same than the working directory where R console and/or your Command Prompt/Terminal are working,</p>
-<p>In R Console you can print the current working directory it with</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "/Users/ab12345"</code></pre>
-</div>
-</div>
-<p>Alternatively, if you are using the Command Prompt (Windows) you can check your current directory with</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Command Prompt</strong></pre>
-</div>
-<div class="sourceCode" id="cb3" data-filename="Command Prompt"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Or if you are using a Terminal (MacOS and Linux) you can check your current directory with</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Terminal</strong></pre>
-</div>
-<div class="sourceCode" id="cb4" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We’re now ready to get started!</p>
+<p><strong>Please follow our <a href="https://bristol-training.github.io/data-science-project-setup/">installation instructions</a>.</strong></p>
+<p>Once you’ve gone through those, you should be ready to get started!!</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -749,7 +665,7 @@ Installation on University managed computers
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/uob-training/beginning-R/edit/main/pages/010-workspace-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/uob-training/beginning-R/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/uob-training/beginning-R/edit/main/pages/010-workspace-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/uob-training/beginning-R/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
