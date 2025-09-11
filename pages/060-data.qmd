@@ -13,7 +13,7 @@ We will load a dataset of a study about [gene expression data of 42 ER- and ER+ 
 ```{r}
 #| filename: read_csv.r
 
-breast <- read.csv("https://raw.githubusercontent.com/Bristol-Training/beginning-r/refs/heads/main/data/GDS3716.soft",
+breast <- read.csv("https://raw.githubusercontent.com/Bristol-Training/intro-r-1/refs/heads/main/data/GDS3716.soft",
             sep="\t",
             skip=99)
 
@@ -31,7 +31,7 @@ Using the breast cancer dataser, modify `read_csv.R` to print the average expres
 ```{.r}
 #| filename: read_csv.r
 
-breast <- read.csv("https://raw.githubusercontent.com/Bristol-Training/beginning-r/refs/heads/main/data/GDS3716.soft",
+breast <- read.csv("https://raw.githubusercontent.com/Bristol-Training/intro-r-1/refs/heads/main/data/GDS3716.soft",
             sep="\t",
             skip=100)
 
